@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.OrderMapper">
+    <sql id="tb_name">sys_order</sql>
+    <sql id="select_fields">
+        id,cid,uid,getid,backid,oprice,status
+    </sql>
+    <resultMap id="baseResultMap" type="com.qf.pojo.Order">
+        <id column="id" property="id"/>
+        <result column="cid" property="cid"/>
+        <result column="uid" property="uid"/>
+        <result column="getid" property="getId"/>
+        <result column="backid" property="backId"/>
+        <result column="oprice" property="price"/>
+        <result column="status" property="status"/>
+    </resultMap>
+    <insert id="insertOrder" parameterType="com.qf.pojo.Order">
+        insert into
+        <include refid="tb_name"/>
+        (cid,uid,getid,backid,oprice,status)
+        values
+        (#{cid},#{uid},#{getId},#{backId},#{price},#{status})
+    </insert>
+
+</mapper>

@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.qf.BringcarApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.501 s <<< FAILURE! - in com.qf.BringcarApplicationTests
+contextLoads  Time elapsed: 0.541 s  <<< ERROR!
+org.springframework.jdbc.BadSqlGrammarException: 
+
+### Error updating database.  Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+### The error may exist in file [D:\java-2003\bringCar\target\classes\mapper\OrderMapper.xml]
+### The error may involve com.qf.mapper.OrderMapper.insertOrder-Inline
+### The error occurred while setting parameters
+### SQL: insert into          sys_order          values         (?,?,?,?,?,?)
+### Cause: java.sql.SQLException: Column count doesn't match value count at row 1
+; bad SQL grammar []; nested exception is java.sql.SQLException: Column count doesn't match value count at row 1
+	at com.qf.BringcarApplicationTests.contextLoads(BringcarApplicationTests.java:28)
+Caused by: java.sql.SQLException: Column count doesn't match value count at row 1
+	at com.qf.BringcarApplicationTests.contextLoads(BringcarApplicationTests.java:28)
+

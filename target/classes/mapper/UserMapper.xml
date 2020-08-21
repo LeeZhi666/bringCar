@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.UserMapper">
+    <sql id="tb_name">sys_user</sql>
+    <sql id="select_fields">
+        id,tel,password,email,invitation
+    </sql>
+    <resultMap id="baseResultMap" type="com.qf.pojo.User">
+        <id column="id" property="id"/>
+        <result column="tel" property="tel"/>
+        <result column="password" property="password"/>
+        <result column="email" property="email"/>
+        <result column="invitation" property="invitation"/>
+    </resultMap>
+    <select id="login" resultType="com.qf.pojo.User" parameterType="com.qf.pojo.User">
+         select
+           <include refid="select_fields"/>
+         from
+           <include refid="tb_name"/>
+         where
+           tel = #{tel}
+         and
+           password = #{password}
+    </select>
+</mapper>
