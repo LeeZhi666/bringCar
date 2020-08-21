@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.mapper.CityMapper">
+    <sql id="tb_name">sys_city</sql>
+    <sql id="select_fields">
+        id,name,pid
+    </sql>
+    <resultMap id="baseResultMap" type="com.qf.pojo.City">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="pid" property="pid"/>
+    </resultMap>
+    <select id="findAll" resultMap="baseResultMap" parameterType="String">
+        select
+        <include refid="select_fields"/>
+        from
+        <include refid="tb_name"/>
+        where
+        pid = #{pid}
+    </select>
+    <select id="getCityById" resultMap="baseResultMap" parameterType="String">
+        select
+        <include refid="select_fields"/>
+        from
+        <include refid="tb_name"/>
+        where
+        id = #{id}
+    </select>
+</mapper>
