@@ -2,6 +2,8 @@ package com.qf.controller;
 
 import com.qf.pojo.User;
 import com.qf.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -11,7 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-
+@Api(tags = "登录接口")
 @Controller
 //@CrossOrigin
 //// http://localhost:8082/
@@ -35,6 +37,7 @@ public class Index {
 //        System.out.println("yes");
         return "refuse";
     }
+    @ApiOperation("登录")
     @RequestMapping(value = "/toLogin",method = RequestMethod.POST)
     @ResponseBody
     public String toLogin(@RequestParam("tel") String tel, @RequestParam("password") String password, HttpSession httpSession){

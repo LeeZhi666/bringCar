@@ -1,15 +1,24 @@
 package com.qf.pojo;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-
+@ApiModel("订单")
 public class Order {
+    @ApiModelProperty("编号")
     private Integer id;
+    @ApiModelProperty("城市编号")
     private Integer cid;
+    @ApiModelProperty("用户编号")
     private Integer uid;
+    @ApiModelProperty("取车地编号")
     private Integer getId;
+    @ApiModelProperty("还车地编号")
     private Integer backId;
+    @ApiModelProperty("价格")
     private Double price;
+    @ApiModelProperty("状态")
     private String status;
 
     public Integer getId() {
