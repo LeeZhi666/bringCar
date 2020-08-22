@@ -2,6 +2,7 @@ package com.qf.controller;
 
 import com.qf.pojo.Order;
 import com.qf.service.OrderService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
-
+@Api(tags = "订单接口")
 @Controller
 public class OrderController {
 
