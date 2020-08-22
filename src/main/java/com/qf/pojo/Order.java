@@ -1,10 +1,11 @@
 package com.qf.pojo;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
-@ApiModel("订单")
+@Api(tags = "订单")
 public class Order {
     @ApiModelProperty("编号")
     private Integer id;

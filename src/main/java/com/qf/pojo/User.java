@@ -1,12 +1,13 @@
 package com.qf.pojo;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@ApiModel("用户")
+@Api( tags = "用户")
 public class User {
     @ApiModelProperty("用户编号")
     private Integer id;
