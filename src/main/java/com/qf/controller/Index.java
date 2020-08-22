@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 @Api(tags = "登录接口")
 @Controller
+@CrossOrigin("*")
 //@CrossOrigin
 //// http://localhost:8082/
 public class Index {
@@ -49,6 +50,7 @@ public class Index {
 //       }
 //       return "false";
        //存储用户输入的用户名和密码
+//        System.out.println("yes");
         UsernamePasswordToken token = new UsernamePasswordToken(tel, password);
         //主体对象
         Subject subject = SecurityUtils.getSubject();
@@ -56,6 +58,7 @@ public class Index {
         try {
             subject.login(token);
             httpSession.setAttribute("uid",userService.selectId(user));
+            System.out.println("yes");
             return "success";
         }catch (Exception e){
             return "false";
